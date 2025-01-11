@@ -1,4 +1,44 @@
 <!DOCTYPE html>
-<html>
-    <h1>Home page</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .random-numbers {
+            font-size: 24px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Number Generator</h1>
+    <div class="random-numbers">
+        <p id="number1">Random Number 1: </p>
+        <p id="number2">Random Number 2: </p>
+    </div>
+
+    <script>
+        function generateRandomNumbers() {
+            // Generate two random numbers
+            const randomNumber1 = Math.floor(Math.random() * 100); // Change 100 to set the range
+            const randomNumber2 = Math.floor(Math.random() * 100); // Change 100 to set the range
+
+            // Display the random numbers
+            document.getElementById("number1").textContent = `Random Number 1: ${randomNumber1}`;
+            document.getElementById("number2").textContent = `Random Number 2: ${randomNumber2}`;
+        }
+
+        // Generate random numbers every 10 seconds
+        setInterval(generateRandomNumbers, 10000);
+
+        // Generate random numbers immediately when the page loads
+        generateRandomNumbers();
+    </script>
+</body>
 </html>
