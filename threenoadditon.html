@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Digit Random Number Addition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Three-Digit Number Addition</h1>
+        
+        <!-- Section for random numbers -->
+        <h3>Random Numbers</h3>
+        <p id="randomNumbers">Click "Next" to generate numbers</p>
+        <button onclick="generateRandomNumbers()">Next</button>
+        <button onclick="showRandomSum()">Answer</button>
+        <p id="randomSum">Sum: </p>
+    </div>
+
+    <script>
+        let randomNum1 = 0;
+        let randomNum2 = 0;
+
+        function generateRandomNumbers() {
+            randomNum1 = Math.floor(Math.random() * 900) + 100; // Generate a 3-digit number
+            randomNum2 = Math.floor(Math.random() * 900) + 100; // Generate a 3-digit number
+            document.getElementById('randomNumbers').textContent = 
+                `Random Numbers: ${randomNum1} and ${randomNum2}`;
+            document.getElementById('randomSum').textContent = 'Sum: ';
+        }
+
+        function showRandomSum() {
+            const sum = randomNum1 + randomNum2;
+            document.getElementById('randomSum').textContent = `Sum: ${sum}`;
+        }
+    </script>
+</body>
+</html>
